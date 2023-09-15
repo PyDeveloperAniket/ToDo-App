@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Document metadata -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Document title -->
+    <title>ToDo App</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <!-- Preconnect to external font source -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- External font stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Preload an image file -->
+    <link rel="preload" href="assets/checking.svg" as="image" type="image/svg+xml" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Header section -->
+    <header class="card">
+      <!-- <h1>To Do App...!</h1> -->
+      <h1>
+        <a href="" class="typewrite" data-period="2000" data-type='["To Do App...!"]'>
+          <span class="wrap"></span>
+        </a>
+      </h1>
+
+      <!-- Button for theme switch -->
+      <button id="theme-switcher" style="width: auto;">
+        <img src="assets/light-bulb.png" alt="change mode" />
+      </button>
+    </header>
+    
+    <main>
+      <!-- Image section -->
+      <img src="assets/hero-drone.webp" alt="drone" class="right-image">
+      <!-- Add todo section -->
+      <div class="card add">
+        <div class="cb-container">
+          <!-- Button to add a new todo -->
+          <button id="add-btn">+</button>
+        </div>
+        <div class="txt-container">
+          <label for="addt">Create todo</label>
+          <!-- Input field for creating a new todo -->
+          <input type="text" class="txt-input" placeholder="Create a new todo..." spellcheck="false" autocomplete="off" id="addt" />
+        </div>
+      </div>
+      <!-- Todo list section -->
+      <ul class="todos"></ul>
+      <!-- Statistics section -->
+      <div class="card stat">
+        <div class="filter">
+          <!-- Buttons for filtering todo list -->
+          <button id="all" class="on">All</button>
+          <button id="active">Active</button>
+          <button id="completed">Completed</button>
+        </div>
+        <div class="corner">
+          <!-- Button to clear completed todos -->
+          <button id="clear-completed">Clear Completed</button>
+        </div>
+        <p class="corner">Total Tasks: <span id="items-left">0</span></p>
+      </div>
+    </main>
+    <!-- JavaScript file -->
+    <script src="index.js"></script>
+  </body>
+</html>

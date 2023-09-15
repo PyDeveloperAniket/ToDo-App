@@ -1,0 +1,408 @@
+:root {
+    --ff-sans:'Poppins', sans-serif;
+    --base-font: 1.6rem;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --clr-primary: hsl(0, 0%, 98%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-blue: hsl(188, 87%, 53%);
+    --clr-green: hsl(192, 100%, 67%);
+    --clr-pink: hsl(280, 87%, 65%);
+    --clr-gb-1: hsl(0, 0%, 98%);
+    --clr-gb-2: hsl(240, 33%, 99%);
+    --clr-gb-3: hsl(228, 8%, 88%);
+    --clr-gb-4: hsl(240, 3%, 69%);
+    --clr-gb-5: hsl(233, 14%, 35%);
+    --clr-gb-6: hsl(235, 16%, 56%);
+    --clr-box-shadow: hsl(0, 0%, 0%, 0.1);
+  }
+  
+  /* light theme */
+  
+  body.light {
+    --clr-primary: hsl(243, 12%, 30%);
+    --clr-card-bg: hsl(0, 0%, 100%);
+    --clr-gb-1: hsl(240, 8%, 24%);
+    --clr-gb-2: hsl(243, 12%, 30%);
+    --clr-gb-3: hsl(252, 6%, 83%);
+    --clr-gb-4: hsl(237, 10%, 64%);
+    --clr-gb-5: hsl(252, 9%, 73%);
+    --clr-gb-6: hsl(252, 21%, 94%);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    position: relative;
+  }
+  
+  html,
+  body {
+    min-height: 100%;
+    background-color: #0d1117;   
+    background-image: url("/assets/space.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    user-select: none;
+  }
+
+  .right-image{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    right:100px;
+    transform: translateY(-50%);
+}
+@keyframes updownmovement {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .right-image {
+    animation: updownmovement 3s infinite;
+  }
+
+  /* Media Queries */
+@media only screen and (max-width: 600px) {
+    .right-image {
+        width: 250px;
+        height: 100px;
+        position: absolute;
+        top: 10%;
+        right:10%;
+        transform: translateY(-50%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .right-image {
+        width: 150px;
+        height: 100px;
+        position: absolute;
+        top: 5%;
+        right:100px;
+        transform: translateY(-50%);
+    }
+}
+  
+  
+ /* body section */
+  
+  body {
+    font: var(--fw-normal) var(--base-font) var(--ff-sans);
+    background: var(--clr-page-bg) var(--img-bg) no-repeat 0% 0% / 100vw 30rem;
+    padding-top: 8rem;
+    width: min(85%, 54rem);
+    margin: auto;
+  }
+  
+  /* input button */
+  
+  input,
+  button {
+    font: inherit;
+    border: 0;
+    background: transparent;
+  }
+  
+  button {
+    display: flex;
+    user-select: none;
+  }
+  
+  input:focus,
+  button:focus {
+    outline: 0;
+  }
+  
+  label {
+    display: none;
+  }
+  
+  /* cards */
+  
+  .card {
+    background-color: var(--clr-card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.9rem 2rem;
+    gap: 2rem;
+  }
+  
+  /* header section */
+  
+  header.card {
+    background: transparent;
+    padding: 0;
+    align-items: flex-start;
+  }
+  
+  header.card h1 {
+    color: var(--clr-white);
+    letter-spacing: 1.3rem;
+    font-weight: 700;
+    font-size: calc(var(--base-font) * 2);
+  }
+  
+  /* checkbox */
+  
+  .card .cb-container {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.1rem solid var(--clr-gb-5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .card .cb-container .cb-input {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  
+  .card .cb-container .check {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  /* check item */
+  
+  .card .cb-container .cb-input:checked + .check {
+    background: url("/assets/checking.svg"),
+    linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* add item to list */
+  
+  .add {
+    margin: 4rem 0 2.5rem 0;
+    border-radius: 0.5rem;
+  }
+  
+  .add .cb-container {
+    transition: background 0.3s ease;
+  }
+  
+  .add .cb-container #add-btn {
+    color: var(--clr-gb-2);
+    font-size: var(--base-font);
+    transition: color 0.3s ease;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add .cb-container:hover {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  }
+  
+  .add .cb-container:active {
+    transform: scale(0.95);
+  }
+  
+  .add .cb-container:hover #add-btn {
+    color: var(--clr-white);
+  }
+  
+  .add .txt-container {
+    flex: 1;
+  }
+  
+  .add .txt-container .txt-input {
+    width: 100%;
+    padding: 0.7rem 0;
+    color: var(--clr-gb-1);
+  }
+  
+  body.light .add .txt-container .txt-input {
+    font-weight: var(--fw-bold);
+  }
+  
+  .add .txt-container .txt-input::placeholder {
+    color: var(--clr-gb-5);
+    font-weight: var(--fw-normal);
+  }
+  
+  /* to do container */
+  
+  .todos > * {
+    transition: 0.4s ease;
+  }
+  
+  .todos .card[draggable] {
+    cursor: move;
+  }
+  
+  .todos .card:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .todos > * + * {
+    border-top: 0.2rem solid var(--clr-gb-6);
+  }
+  
+  .item {
+    flex: 1;
+    color: var(--clr-gb-2);
+  }
+  
+  .item:hover {
+    color: var(--clr-gb-1);
+  }
+  
+  body.light .todos {
+    box-shadow: 0 0 2rem 0.4rem var(--clr-box-shadow);
+  }
+  
+  /* item completed */
+  
+  .todos .card.checked .item {
+    text-decoration: line-through;
+    color: var(--clr-gb-3);
+    text-decoration-color: var(--clr-gb-3);
+  }
+  
+  /* clear container */
+  
+  .clear {
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  
+  .todos .card:hover .clear {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /* start container */
+  
+  .stat {
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: 0.2rem solid var(--clr-gb-6);
+    font-size: calc(var(--base-font) - 0.3rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .stat * {
+    color: var(--clr-gb-4);
+  }
+  
+  body.light .stat {
+    box-shadow: 0 1rem 2rem -0.4rem var(--clr-box-shadow);
+  }
+  
+    /* Corners */
+  
+  .stat .corner:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .stat .corner button:hover {
+    color: var(--clr-primary);
+  }
+  
+  /* buton to filter */
+  
+  .stat .filter {
+    display: flex;
+    justify-content: space-between;
+    font-weight: var(--fw-bold);
+  }
+  
+  .stat .filter *:hover {
+    color: var(--clr-primary);
+  }
+  
+  .stat .filter .on {
+    color: var(--clr-blue);
+  }
+  
+
+  
+ /* filter todo list */
+  
+  .todos.active .card.checked,
+  .todos.completed .card {
+    transition: 0.4s;
+    opacity: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  
+  .todos.completed .card.checked {
+    opacity: 1;
+    padding: 1.9rem 2rem;
+    height: auto;
+    display: flex;
+    pointer-events: all;
+    transition: 0.4s;
+  }
+  
+  .todos.completed > .card.checked ~ .card.checked {
+    border-top: 0.2rem solid var(--clr-gb-6);
+  }
+  
+  /* delete item animation */
+
+.todos .card.fall {
+    animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 0% 100%;
+    pointer-events: none;
+    animation: fall 0.2s forwards ease;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+}
+
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(90deg);
+    }
+}
+
+/* type writer animation */
+
+.typewrite{
+  color: white;
+  text-decoration: none;
+}
