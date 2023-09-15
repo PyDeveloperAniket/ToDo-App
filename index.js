@@ -155,7 +155,7 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
     button.classList.add("clear");
     // Set attributes
     card.setAttribute("draggable", true);
-    img.setAttribute("src", "cancel.svg");
+    img.setAttribute("src", "assets/cancel.svg");
     img.setAttribute("alt", "Clear it");
     cbInput.setAttribute("type", "checkbox");
     // set todo item for card
